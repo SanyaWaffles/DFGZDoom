@@ -1891,11 +1891,11 @@ bool G_CheckSaveGameWads (FSerializer &arc, bool printwarn)
 {
 	bool printRequires = false;
 
-	const char* text = arc.GetString("Game WAD");
-	CheckSingleWad(text, printRequires, printwarn);
-	const char* text2 = arc.GetString("Map WAD");
+	const char *text = arc.GetString("Game WAD");
+	CheckSingleWad (text, printRequires, printwarn);
+	const char *text2 = arc.GetString("Map WAD");
 	// do not validate the same file twice.
-	if (text != nullptr && text2 != nullptr && stricmp(text, text2) != 0) CheckSingleWad(text2, printRequires, printwarn);
+	if (text != nullptr && text2 != nullptr && stricmp(text, text2) != 0) CheckSingleWad (text2, printRequires, printwarn);
 
 	if (printRequires)
 	{
